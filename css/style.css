@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+  --color-one: #ec7063;
+  --color-two: #3498db;
+  --color-three: #58d68d;
+  --color-light: white;
+  --color-dark: #34495e;
+  --border-radius-one: 10px;
+  --border-radius-two: 15px;
+}
+
+html {
+  font-size: 62.5%; /*62.5% of 16px 1rem = 10px 2rem = 20px*/
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #efefef;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a,
+p,
+li,
+span {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-size: 3rem;
+}
+
+/* header */
+.header {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(75px);
+  /* -webkit-backdrop-filter: blur(75px); */
+}
+/* end of header */
+
+/* container maxwidth */
+.container-width {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+/* end of container maxwidth */
+
+/* navigationbar */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 2;
+}
+/* end of navigationbar */
+
+/* logo */
+.logo {
+  max-width: 80px;
+}
+
+.logo > img {
+  width: 100%;
+}
+/* end of logo */
+
+.nav-list {
+  display: flex;
+  gap: 4rem;
+}
+
+.nav-link > a {
+  text-decoration: none;
+  color: var(--color-light);
+  text-transform: capitalize;
+}
+
+.nav-link > a:hover {
+  color: #f1c40f;
+}
+
+.icon-bar {
+  display: none;
+  color: var(--color-light);
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+/* nav responsive */
+@media (max-width: 768px) {
+  .icon-bar {
+    display: block;
+  }
+
+  .navigation {
+    flex-wrap: wrap;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin: 3rem 0;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .nav-link {
+    border-bottom: 1px solid #8e8e8e;
+  }
+}
+/* end of nav responsive */
+
+/* hero section */
+.hero {
+  background-color: #888888;
+}
+
+.grid-1x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem;
+}
+
+.grid-hero {
+  align-items: center;
+}
+.btn {
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius-one);
+  border: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-one {
+  background-color: var(--color-one);
+  color: var(--color-light);
+}
+
+.hero-image {
+  max-width: 900px;
+}
+
+.hero-image > img {
+  width: 100%;
+}
+
+.hero-heading {
+  line-height: 1.2;
+  color: var(--color-light);
+}
+
+.hero-desc > p {
+  margin: 2rem 0;
+  color: var(--color-light);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .grid-1x2 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-desc {
+    text-align: center;
+    margin: 0 0 2rem 0;
+  }
+
+  .grid-hero {
+    padding: 1.5rem;
+  }
+}
+/* end of responsive */
+
+/* end of hero section */
+
+/* club section*/
+
+.club{
+  padding: 2rem;
+}
+
+.club-header {
+  text-align: center;
+  margin: 5rem 0;
+}
+.grid-1x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.club-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px #8d8c8c;
+}
+
+.club-image {
+  max-width: 100%;
+}
+
+.club-image > img {
+  width: 100%;
+  border-radius: var(--border-radius-one);
+}
+
+.btn-two {
+  background-color: var(--color-two);
+  color: var(--color-light);
+}
+
+.btn-three {
+  background-color: var(--color-three);
+  color: var(--color-dark);
+}
+
+.btn-container {
+  display: flex;
+  gap: 2rem;
+  border-radius: var(--border-radius-two);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.fcb-header,
+.club-card > p {
+  text-align: center;
+  color: var(--color-dark);
+}
+
+.fcb-header {
+  margin-top: 1rem;
+}
+
+.club-card > p {
+  margin: 1rem 0;
+}
+
+/* responsive */
+@media screen and (max-width: 900px) {
+  .grid-1x3{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+  }
+}
+
+@media screen and (max-width: 768px) {
+.grid-1x3 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* end of responsive */
+
+/* end of club section */
+
+/* player */
+
+.player{
+  padding: 2rem;
+}
+
+.player-header{
+  text-align: center;
+  margin: 5rem 0;
+}
+.grid-1x4{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr );
+  gap: 2rem;
+}
+
+.grid-1x4 > a{
+  text-decoration: none;
+}
+
+.image-card-link{
+  max-width: 150px;
+}
+
+.image-card-link > img{
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.card-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-light);
+  border-radius: 2rem;
+  box-shadow: 0 0 5px #8d8c8c;
+  padding: 2rem;
+}
+
+.card-player > .name-player{
+  color: initial;
+  margin-top: 1rem;
+}
+
+.card-player:hover > .image-card-link > img{
+  transform: scale(1.1);
+}
+
+/* responsive */
+@media screen and (max-width: 900px){
+  .grid-1x4{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px){
+  .grid-1x4{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+} 
+/* end of responsive */
+
+/* end of player */
+
+/* footer */
+.footer{
+  background-color: #313f4c;
+  margin-top: 5rem;
+  padding: 7rem 2rem;
+}
+
+.footer-link > a{
+  text-decoration: none;
+  color: #b0b0b0;
+}
+
+.footer-link > a:hover{
+  color: var(--color-light);
+}
+
+.copyright{
+  color: #dcdcdc;
+}
+/* end of footer */
